@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .highlight {
+      Background-color: yellow;
+    }
+
+    .underline {
+      text-decoration: underline;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .visible {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="text">This is a sample paragraph.</p>
+  <input type="text" id="classInput" placeholder="Enter class name">
+  <button onclick="addClass()">Add Class</button>
+
+  <script>
+    function addClass() {
+      className = document.getElementById('classInput').value;
+      document.getElementById('text').className = className;
+    }
+    function changeButtonText() {
+      button = document.getElementById('myButton');
+      button.textContent = "Clicked!";
+      button.classList.add('unclickable');
+    }
+    function toggleVisibility(elementId) {
+      element = document.getElementById(elementId);
+      if (element.classList.contains('visible')) {
+        element.classList.remove('visible');
+        element.classList.add('hidden');
+      } else {
+        element.classList.remove('hidden');
+        element.classList.add('visible');
+      }
+    }
+
+  </script>
+
+  <section>
+    <p id="p1" class="visible">This is paragraph 1.</p>
+    <p id="p2" class="visible">This is paragraph 2.</p>
+    <p id="p3" class="visible">This is paragraph 3.</p>
+    <button onclick="toggleVisibility('p1')">Toggle Paragraph 1</button>
+    <button onclick="toggleVisibility('p3')">Toggle Paragraph 2</button>
+    <button onclick="toggleVisibility('p3')">Toggle Paragraph 3</button>
+  </section>
+
+
+  <section>
+    <button id="myButton" onclick="changeButtonText()">Click me!</button>
+  </section>
+
+
+
+
+</body>
+
+</html>
